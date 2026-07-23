@@ -16,5 +16,7 @@ end
 alias ls='eza'
 alias tree='eza --tree'
 alias fetch='fastfetch'
+alias fetchs='fastfetch --logo none'
+
 export PATH="$HOME/.local/bin:$PATH"
 set -gx TERMCMD kitty
