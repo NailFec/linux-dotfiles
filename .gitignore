@@ -4,6 +4,7 @@
 !/fish/
 !/niri/
 !/kitty/
+!/nvim/
 
 **/cache/
 **/*.log
