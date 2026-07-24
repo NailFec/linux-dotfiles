@@ -1,10 +1,17 @@
-/*
+*
 !.gitignore
 
-!/fish/
-!/niri/
-!/kitty/
-!/nvim/
+!fish/
+!niri/
+!kitty/
+!nvim/
+
+!obs-studio/
+!obs-studio/basic/
+!obs-studio/basic/profiles/
+!obs-studio/basic/profiles/Untitled/
+!obs-studio/basic/profiles/Untitled/basic.ini
 
 **/cache/
 **/*.log
+**/*.gz
