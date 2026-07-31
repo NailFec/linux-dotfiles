@@ -110,7 +110,7 @@ input {
     position x=1280 y=0
 }
 
-output "DP-1" {
+output "DP-2" {
     // Lenovo
     mode "2560x1440@240.000"
     scale 1.25
@@ -121,7 +121,7 @@ output "HDMI-A-1" {
     // BenQ
     mode "2560x1440@59.951"
     scale 1.25
-    position x=2048 y=0
+    position x=-2048 y=0
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -379,13 +379,14 @@ window-rule {
     }
 }
 
-/-window-rule {
+window-rule {
     match app-id=r#"^jetbrains-"#
     draw-border-with-background false
-    opacity 0.85
-    background-effect {
-        blur true
-    }
+    // opacity 0.85
+    // background-effect {
+    //     blur true
+    // }
+    // open-fullscreen true
 }
 
 window-rule {
@@ -678,10 +679,11 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 
-// blur {
-//   passes 3
-//   offset 3
-//   noise 0.02
-//   saturation 1.5
-// }
-
+environment {
+    XMODIFIERS "@im=fcitx"
+    GTK_IM_MODULE "fcitx"
+    QT_IM_MODULE "fcitx"
+    SDL_IM_MODULE "fcitx"
+    // 可选，部分 Qt 应用
+    QT_IM_MODULES "wayland;fcitx"
+}
