@@ -2,9 +2,15 @@
 !.gitignore
 
 !fish/
+!fish/**
 !niri/
+!niri/**
 !kitty/
+!kitty/**
 !nvim/
+!nvim/**
+!btop/
+!btop/**
 
 !obs-studio/
 !obs-studio/basic/
