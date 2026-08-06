@@ -4,6 +4,10 @@
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true -- uses spaces instead of tab character
+-- vim.opt.relativenumber = false
+-- vim.opt.spell = true
+-- vim.opt.spelllang = { "en_us", "cjk" }
+vim.opt.spell = false
 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "c", "cpp" },
