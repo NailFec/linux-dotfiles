@@ -11,6 +11,8 @@
 !nvim/**
 !btop/
 !btop/**
+!waybar/
+!waybar/**
 
 !obs-studio/
 !obs-studio/basic/
