@@ -13,6 +13,8 @@
 !btop/**
 !waybar/
 !waybar/**
+!swaylock/
+!swaylock/**
 
 !obs-studio/
 !obs-studio/basic/
