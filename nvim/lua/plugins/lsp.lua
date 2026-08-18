@@ -4,14 +4,18 @@ return {
         opts = {
             servers = {
                 nim_langserver = {
-                    -- 因为你是用 nimble 安装的，不是 mason，所以关掉 mason 自动安装
-                    mason = false,
-                    -- 如果需要自定义设置可以加这里
-                    -- settings = {
-                    --   nim = {
-                    --     -- nimsuggestPath = "...",
-                    --   },
-                    -- },
+                    flags = {
+                        debounce_text_changes = 1000,
+                    },
+                    settings = {
+                        nim = {
+                            timeout = 60000,
+                            autoCheckFile = true,
+                            nimsuggestTimeout = 60000,
+                            maxNimsuggestProcesses = 1,
+                            autoRestart = true,
+                        },
+                    },
                 },
             },
         },

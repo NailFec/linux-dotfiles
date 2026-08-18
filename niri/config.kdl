@@ -394,6 +394,48 @@ window-rule {
     open-fullscreen true
 }
 
+window-rule {
+    match app-id="one.alynx.showmethekey" title="Floating Window - Show Me The Key"
+
+    default-floating-position x=32 y=32 relative-to="bottom-right"
+    default-column-width { fixed 1000; }
+    default-window-height { fixed 120; }
+
+    open-floating true
+    draw-border-with-background false
+    opacity 0.8
+    focus-ring {
+        off
+    }
+    border {
+        off
+    }
+    shadow {
+        off
+    }
+}
+
+/-window-rule {
+    match app-id="BongoCat.x86_64"
+//     default-floating-position x=32 y=32 relative-to="bottom-right"
+//     default-column-width { fixed 1000; }
+//     default-window-height { fixed 120; }
+// 
+//     open-floating true
+//     draw-border-with-background false
+//     opacity 0.8
+//     focus-ring {
+//         off
+//     }
+//     border {
+//         off
+//     }
+//     shadow {
+//         off
+//     }
+
+}
+
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 

@@ -1,4 +1,4 @@
-vim.notify("keymaps.lua loaded!")
+-- vim.notify("keymaps.lua loaded!")
 local Terminal = require("toggleterm.terminal").Terminal
 
 local function get_latest_input(dir, base)
@@ -20,8 +20,8 @@ end
 
 local opts = { buffer = true, silent = true }
 
-local CFLAGS = "-std=c++17 -O2 -Wall -Wextra -Wshadow -DLOCAL "
-    .. "-fsanitize=address,undefined -fno-sanitize-recover=all"
+local CFLAGS =
+    "-x c++ -g -std=gnu++20 -Wall -Wextra -Wshadow -Wconversion -Wfloat-equal -Wduplicated-cond -Wlogical-op -D_GLIBCXX_DEBUG -D_GLIBCXX_ASSERTIONS -fno-omit-frame-pointer -DDAVID "
 
 -- F5: Compile only
 vim.keymap.set("n", "<F5>", function()
