@@ -110,10 +110,10 @@ input {
     position x=1280 y=0
 }
 
-output "DP-2" {
+output "DP-1" {
     // Lenovo
     mode "2560x1440@240.000"
-    scale 1.25
+    scale 1
     position x=0 y=0
 }
 
@@ -294,6 +294,8 @@ spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "awww-daemon"
 spawn-at-startup "awww" "img" "/home/nailfec/Pictures/Wallpapers/Opaline_blue_LM.jpg" "--transition-type" "simple"
 
+// BarInFoo: poll niri's focused window every 30s and update Waybar (not enabled).
+// spawn-at-startup "/home/nailfec/Projects/BarInFoo/bin/poll-niri.sh"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -462,6 +464,9 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+A hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+Shift+A hotkey-overlay-title="Pick Waybar hint: fuzzel" { spawn "/home/nailfec/Projects/BarInFoo/bin/pick-hint.sh"; }
+    // BarInFoo: query niri's focused window now and update Waybar (not enabled).
+    // Mod+Shift+W hotkey-overlay-title="Refresh Waybar hint from focused window" { spawn "/home/nailfec/Projects/BarInFoo/bin/sync-from-niri.sh"; }
     Mod+B hotkey-overlay-title="Open a Browser: Vivaldi" { spawn "vivaldi"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 

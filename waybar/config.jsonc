@@ -31,9 +31,13 @@
         "tray",
         "custom/power"
     ],
+    // BarInFoo: fuzzel pick is enabled (Mod+Shift+A). Niri focused-window updates are not.
     "custom/text_field_1": {
-        "format": " F5 Compile | F6 C, Input Run | F7 C, Run last | F8 Open last | F9 Create new",
+        "exec": "/home/nailfec/Projects/app/BarInFoo/bin/waybar-hint.sh",
+        "return-type": "json",
+        "format": "{text}",
         "interval": "once",
+        "signal": 8,
         "tooltip": false
     },
     "niri/workspaces": {
