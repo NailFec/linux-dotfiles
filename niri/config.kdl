@@ -121,7 +121,7 @@ output "HDMI-A-1" {
     // BenQ
     mode "2560x1440@59.951"
     scale 1.25
-    position x=-2048 y=0
+    position x=2048 y=0
 }
 
 // Settings that influence how windows are positioned and sized.
