@@ -41,4 +41,5 @@ alias tree='eza --tree'
 alias fetch='fastfetch'
 alias fetchs='fastfetch --logo none'
 alias gitl="lazygit"
-alias bbdown='~/bin/BBDown/BBDown -q "8K 超高清, 1080P 高码率, 1080P 高清" -e "av1,hevc,avc"'
+
+test -f ~/.config/fish/secrets.fish; and source ~/.config/fish/secrets.fish
