@@ -296,9 +296,12 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "xwayland-satellite"
+spawn-at-startup "/usr/lib/xdg-desktop-portal-gnome"
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-at-startup "sh" "-c" "killall nautilus 2>/dev/null; exec /home/nailfec/.local/bin/fm1-kitty"
+
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"
-spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 // spawn-at-startup "/usr/bin/clash-verge"
 
 spawn-at-startup "elephant"
@@ -542,8 +545,8 @@ binds {
 
     Mod+Home { focus-workspace-up; }
     Mod+End  { focus-workspace-down; }
-    Mod+Shift+Home { move-workspace-up; }
-    Mod+Shift+End  { move-workspace-down; }
+    Mod+Shift+Home { move-column-to-workspace-up; }
+    Mod+Shift+End  { move-column-to-workspace-down; }
 
     Mod+Ctrl+Left  { focus-monitor-left; }
     Mod+Ctrl+Down  { focus-monitor-down; }
@@ -738,10 +741,15 @@ binds {
 }
 
 environment {
+    // fcitx
     XMODIFIERS "@im=fcitx"
     GTK_IM_MODULE "fcitx"
     QT_IM_MODULE "fcitx"
     SDL_IM_MODULE "fcitx"
     // 可选，部分 Qt 应用
     QT_IM_MODULES "wayland;fcitx"
+
+    // Qt dark theme
+    QT_QPA_PLATFORMTHEME "qt6ct"
+    QT_QPA_PLATFORMTHEME_QT6 "qt6ct"
 }
