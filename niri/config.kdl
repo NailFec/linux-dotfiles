@@ -302,6 +302,7 @@ spawn-at-startup "sh" "-c" "killall nautilus 2>/dev/null; exec /home/nailfec/.lo
 
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"
+spawn-at-startup "/home/nailfec/.config/swayidle/auto.sh"
 // spawn-at-startup "/usr/bin/clash-verge"
 
 spawn-at-startup "elephant"

@@ -7,16 +7,13 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "custom/text_field_1",
+        "clock#date",
+        "clock",
         "niri/workspaces",
         "custom/media"
     ],
-    "modules-center": [
-        "clock#date",
-        "clock"
-    ],
+    "modules-center": [],
     "modules-right": [
-        "mpd",
         "idle_inhibitor",
         "pulseaudio",
         "network",
@@ -26,34 +23,19 @@
         "temperature",
         // "backlight",
         "keyboard-state",
-        // "battery",
-        // "battery#bat2",
+        "battery",
         "tray",
         "custom/power"
     ],
-    "custom/text_field_1": {
-        "format": " F5 Compile | F6 C, Input Run | F7 C, Run last | F8 Open last | F9 Create new",
-        "interval": "once",
-        "tooltip": false
-    },
     "niri/workspaces": {
-        "format": "{icon} {windows}",
-        "format-window-separator": " ",
-        "window-rewrite-default": "",
-        "window-rewrite": {
-            "app_id<firefox>": "",
-            "app_id<dolphin>": "",
-            "app_id<org.gnome.Nautilus>": "",
-            "app_id<thunar>": "",
-            "app_id<foot>": ""
-        },
+        "format": "{icon}",
         "format-icons": {
             "1": "1",
             "2": "2",
             "3": "3",
             "4": "4",
             "5": "5",
-            "active": "",
+            "urgent": "!",
             "default": ""
         }
     },
@@ -124,16 +106,32 @@
         "format": "{}% "
     },
     "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
+        "input-filename": "temp1_input",
         "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
+        "tooltip-format": "CPU package {temperatureC}°C",
         "format-icons": [
             "󰉬",
             "",
             "󰉪"
         ]
+    },
+    "battery": {
+        "bat": "BAT1",
+        "adapter": "ACAD",
+        "interval": 30,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}  {time}",
+        "format-charging": "{capacity}% 󰂄  {time}",
+        "format-plugged": "{capacity}% ",
+        "format-full": "{capacity}% {icon}",
+        "format-time": "{H}h {m}m",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip-format": "Health {health}%\n{cycles} charge cycles\n{power:.1f} W"
     },
     "power-profiles-daemon": {
         "format": "{icon}",
@@ -199,10 +197,9 @@
         "menu": "on-click",
         "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
         "menu-actions": {
-            "shutdown": "shutdown",
-            "reboot": "reboot",
-            "suspend": "systemctl suspend",
-            "hibernate": "systemctl hibernate"
+            "shutdown": "systemctl poweroff",
+            "reboot": "systemctl reboot",
+            "suspend": "systemctl suspend"
         }
     }
 }
