@@ -1,8 +1,6 @@
 *
 !.gitignore
 
-!fish/
-!fish/**
 !niri/
 !niri/**
 !kitty/
@@ -15,6 +13,13 @@
 !waybar/**
 !swaylock/
 !swaylock/**
+!hypr/
+!hypr/**
+
+!fish/
+!fish/**
+fish/secrets.fish
+fish/fish_variables
 
 !obs-studio/
 !obs-studio/basic/
