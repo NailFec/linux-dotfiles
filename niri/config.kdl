@@ -119,10 +119,10 @@ touchpad {
     position x=1280 y=0
 }
 
-output "DP-2" {
+output "DP-1" {
     // Lenovo
     mode "2560x1440@240.000"
-    scale 1.25
+    scale 1
     position x=0 y=0
 }
 
@@ -130,7 +130,7 @@ output "HDMI-A-1" {
     // BenQ
     mode "2560x1440@59.951"
     scale 1.25
-    position x=-2048 y=0
+    position x=2048 y=0
 }
 
 // Settings that influence how windows are positioned and sized.
