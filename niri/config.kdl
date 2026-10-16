@@ -36,10 +36,10 @@ touchpad {
         // drag false
         drag-lock
         natural-scroll
-        accel-speed 0.2
+        accel-speed 0.4
         // accel-profile "flat"
         // pinch-sensitivity 1.0
-        scroll-factor 0.2
+        scroll-factor 0.5
         // scroll-factor vertical=1.0 horizontal=-2.0
         // scroll-method "two-finger"
         // scroll-button 273
@@ -131,6 +131,10 @@ output "HDMI-A-1" {
     mode "2560x1440@59.951"
     scale 1.25
     position x=2048 y=0
+}
+
+output "eDP-1" {
+    mode "3200x2000@165.000"
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -302,6 +306,7 @@ spawn-at-startup "sh" "-c" "killall nautilus 2>/dev/null; exec /home/nailfec/.lo
 
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"
+spawn-at-startup "kdeconnectd"
 spawn-at-startup "/home/nailfec/.config/swayidle/auto.sh"
 // spawn-at-startup "/usr/bin/clash-verge"
 
@@ -721,6 +726,10 @@ binds {
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
+
+    XF86SelectiveScreenshot { screenshot; }
+    Ctrl+XF86SelectiveScreenshot { screenshot-screen; }
+    Alt+XF86SelectiveScreenshot { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
