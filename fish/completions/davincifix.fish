@@ -1,0 +1,5 @@
+complete -c davincifix -s h -l help -d 'Show help'
+complete -c davincifix -s r -l recursive -d 'Descend into directories and convert video files'
+complete -c davincifix -s f -l force -d 'Replace an existing -DavinciFixed.mov'
+complete -c davincifix -l dry-run -d 'Print the ffmpeg command without encoding'
+complete -c davincifix -s q -l quality -x -d 'lb, sq, hq, hqx, or 444' -a 'lb sq hq hqx 444'
