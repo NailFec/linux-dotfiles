@@ -42,4 +42,7 @@ alias fetch='fastfetch'
 alias fetchs='fastfetch --logo none'
 alias gitl="lazygit"
 
+alias n-scan="sudo --preserve-env=DISPLAY,WAYLAND_DISPLAY,XDG_RUNTIME_DIR,XAUTHORITY /home/nailfec/.local/bin/disktree /home/nailfec/"
+alias n-read="docker run --gpus all -p 8880:8880 ghcr.io/remsky/kokoro-fastapi-gpu:latest"
+
 test -f ~/.config/fish/secrets.fish; and source ~/.config/fish/secrets.fish
